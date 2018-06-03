@@ -15,5 +15,12 @@ namespace ComicBookChallenge.Controllers
             var comics = ComicBookManager.GetComicBooks();
             return View(comics);
         }
+
+        public ActionResult Detail(int id)
+        {
+            var comics = ComicBookManager.GetComicBooks();
+            var comic = comics.FirstOrDefault(p => p.ComicBookId == id);
+            return View(comic);
+        }
     }
 }
